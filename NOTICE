@@ -1,0 +1,13 @@
+TV-LoRA source release
+
+This distribution includes files supplied in the author's Diffusion_ADMM_TV_lowrank source archive.
+
+The NCSN++ model, sampling, and SDE code contain existing Google Research copyright notices and Apache-2.0 license notices. The reconstruction infrastructure builds on:
+https://github.com/hyungjin-chung/DiffusionMBIR
+https://github.com/yang-song/score_sde_pytorch
+
+The original LICENSE and file-level notices have been retained. Some source files also identify their upstream implementation in comments, including the FIR resampling and Radon utilities. Those notices remain in place.
+
+Release changes include a TV-LoRA-only command-line interface, explicit LDCT/CTHD parameter profiles, strict checkpoint/EMA checks, configurable data and output paths, lazy optional CUDA compilation, fixed-scale evaluation, plotting tools, and tests. The core sampler's update functions have not been rewritten.
+
+This source package does not distribute clinical CT data or pretrained model weights.
