@@ -1,0 +1,7 @@
+TV-LoRA
+
+This project incorporates NCSN++ model, score-based sampling, SDE, and CT components from the following upstream projects:
+https://github.com/hyungjin-chung/DiffusionMBIR
+https://github.com/yang-song/score_sde_pytorch
+
+The NCSN++ model, sampling, and SDE files include Google Research copyright and Apache-2.0 license notices. The Apache-2.0 LICENSE and file-level copyright, license, and attribution notices are retained. Additional upstream attributions for FIR resampling and Radon utilities appear in their source files.

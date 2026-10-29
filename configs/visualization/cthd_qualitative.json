@@ -1,0 +1,31 @@
+{
+  "dataset": "CTHD",
+  "expected_slices": 112,
+  "reference": "outputs/CTHD_qualitative/view8/reference.npy",
+  "reconstructions": {
+    "8": "outputs/CTHD_qualitative/view8/reconstruction.npy",
+    "4": "outputs/CTHD_qualitative/view4/reconstruction.npy",
+    "2": "outputs/CTHD_qualitative/view2/reconstruction.npy"
+  },
+  "indices": null,
+  "roi": {
+    "axial": [
+      0.32,
+      0.32,
+      0.16,
+      0.16
+    ],
+    "coronal": [
+      0.32,
+      0.32,
+      0.16,
+      0.16
+    ],
+    "sagittal": [
+      0.32,
+      0.32,
+      0.16,
+      0.16
+    ]
+  }
+}

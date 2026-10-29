@@ -1,0 +1,10 @@
+{
+  "dataset": "LDCT",
+  "expected_slices": 198,
+  "views": 8,
+  "reference": "outputs/LDCT/view8/reference.npy",
+  "methods": {
+    "TV-LoRA": "outputs/LDCT/view8/reconstruction.npy"
+  },
+  "indices": null
+}

@@ -1,0 +1,10 @@
+{
+  "dataset": "CTHD",
+  "expected_slices": 112,
+  "views": 8,
+  "reference": "outputs/CTHD/view8/reference.npy",
+  "methods": {
+    "TV-LoRA": "outputs/CTHD/view8/reconstruction.npy"
+  },
+  "indices": null
+}
