@@ -41,13 +41,22 @@ The example profiles expect 198 slices for LDCT and 112 slices for CTHD. They ch
 
 Both dataset profiles use the same frozen AAPM NCSN++ score prior, identified in the supplied entry point as checkpoint 185. Reconstruction does not train or fine-tune this network. The model architecture is included under `models/`; pretrained weights are separate.
 
+Download [checkpoint_185.pth from release v1.0.0](https://github.com/DENGZY8/TV-LoRA/releases/download/v1.0.0/checkpoint_185.pth) into the repository's `checkpoints/` directory:
+
+```bash
+mkdir -p checkpoints
+curl --fail --location --retry 3 \
+  --output checkpoints/checkpoint_185.pth \
+  https://github.com/DENGZY8/TV-LoRA/releases/download/v1.0.0/checkpoint_185.pth
+```
+
 Place the original checkpoint at `checkpoints/checkpoint_185.pth`, or pass its exact filename with `--checkpoint`. A filename without `.pth` is accepted. The loader checks model keys, tensor shapes, EMA parameter count, and finite values. Only trainable parameters are paired with the saved EMA list; the frozen Fourier-embedding parameter is restored from the model state.
 
 ```bash
-python tools/check_checkpoint.py --checkpoint /path/to/checkpoint_185 --output checkpoint_info.json
+python tools/check_checkpoint.py --checkpoint checkpoints/checkpoint_185.pth --output checkpoint_info.json
 ```
 
-The report records the file's SHA256 and size. Copy the SHA256 into `checkpoint_sha256` in the experiment profile to pin a specific file. See [weight distribution](docs/model_weights.md). A verified public download link and hash for the particular experiment checkpoint have not yet been supplied with this code package.
+GitHub reports a file size of **983,643,489 bytes** and SHA256 **`88f6a5b48dd8c0a21ebe948e15b693b6fa4e33e21b04d09ad12079efb77486de`** for this release asset. All supplied experiment profiles pin this digest through `checkpoint_sha256`. The check command records the local file's hash and checks its model and EMA contents. The release metadata has been inspected; loading this specific checkpoint and full-volume GPU reconstruction remain to be checked on the target server. See [weight distribution](docs/model_weights.md).
 
 ## Reconstruction
 

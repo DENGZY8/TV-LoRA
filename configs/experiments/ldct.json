@@ -1,0 +1,32 @@
+{
+  "checkpoint": "checkpoints/checkpoint_185.pth",
+  "checkpoint_sha256": "88f6a5b48dd8c0a21ebe948e15b693b6fa4e33e21b04d09ad12079efb77486de",
+  "steps": 2000,
+  "batch_size": 12,
+  "lambda_tv": 0.04,
+  "lambda_lr": 0.5,
+  "snr": 0.16,
+  "seed": 0,
+  "op_backend": "native",
+  "final_consistency": true,
+  "save_progress": false,
+  "view_parameters": {
+    "8": {
+      "rho_tv": 15,
+      "rho_lr": 1
+    },
+    "4": {
+      "rho_tv": 15,
+      "rho_lr": 5
+    },
+    "2": {
+      "rho_tv": 15,
+      "rho_lr": 1
+    }
+  },
+  "dataset": "LDCT",
+  "data_dir": "data/CT/ind/256_sorted/L067",
+  "expected_slices": 198,
+  "output_dir": "outputs/LDCT",
+  "profile": "primary_comparison"
+}

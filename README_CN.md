@@ -13,13 +13,24 @@ cd /path/to/TV-LoRA
 
 模型结构位于 `models/`。预训练权重可保留在原目录，通过 `--checkpoint` 指定文件，无需为两个数据集各复制一份。
 
+预训练权重下载：[checkpoint_185.pth（v1.0.0）](https://github.com/DENGZY8/TV-LoRA/releases/download/v1.0.0/checkpoint_185.pth)。在仓库根目录执行：
+
+```bash
+mkdir -p checkpoints
+curl --fail --location --retry 3 \
+  --output checkpoints/checkpoint_185.pth \
+  https://github.com/DENGZY8/TV-LoRA/releases/download/v1.0.0/checkpoint_185.pth
+```
+
 ```bash
 python tools/check_checkpoint.py \
-  --checkpoint /path/to/checkpoint_185 \
+  --checkpoint checkpoints/checkpoint_185.pth \
   --output checkpoint_info.json
 ```
 
 如果实际文件带 `.pth`，请使用该准确文件名。此命令在 CPU 上核对模型键、EMA 数量与形状，输出权重 SHA256 和大小。不要通过重命名来替代文件有效性检查。
+
+GitHub 发布记录中的文件大小为 **983,643,489 字节**，SHA256 为 `88f6a5b48dd8c0a21ebe948e15b693b6fa4e33e21b04d09ad12079efb77486de`。实验配置已锁定该哈希。发布信息核对不等同于权重内容检查，仍需在运行环境中执行上面的检查命令。
 
 ## 2. 长任务前检查
 
@@ -66,6 +77,6 @@ python tools/plot_curves.py --csv outputs/LDCT/results.csv outputs/CTHD/results.
 
 ## 5. 上传 GitHub
 
-将本目录内容放在 `DENGZY8/TV-LoRA` 仓库根目录。大权重可放在仓库 Releases，README 中填写准确下载链接与 SHA256。`.gitignore` 已排除数据、权重、输出、日志和缓存。
+将本目录内容放在 `DENGZY8/TV-LoRA` 仓库根目录。README 已加入作者提供的 v1.0.0 权重下载链接，实验配置的 `checkpoint_sha256` 已填写 GitHub 发布记录中的摘要。`.gitignore` 已排除数据、权重、输出、日志和缓存。
 
 完整 GPU 重建尚需在原服务器上使用原数据、原权重验证；本包不附带原始 CT 和权重。

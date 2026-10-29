@@ -1,0 +1,31 @@
+{
+  "dataset": "LDCT",
+  "expected_slices": 198,
+  "reference": "outputs/LDCT/view8/reference.npy",
+  "reconstructions": {
+    "8": "outputs/LDCT/view8/reconstruction.npy",
+    "4": "outputs/LDCT/view4/reconstruction.npy",
+    "2": "outputs/LDCT/view2/reconstruction.npy"
+  },
+  "indices": null,
+  "roi": {
+    "axial": [
+      0.32,
+      0.32,
+      0.16,
+      0.16
+    ],
+    "coronal": [
+      0.32,
+      0.32,
+      0.16,
+      0.16
+    ],
+    "sagittal": [
+      0.32,
+      0.32,
+      0.16,
+      0.16
+    ]
+  }
+}

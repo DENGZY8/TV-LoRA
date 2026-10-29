@@ -1,0 +1,21 @@
+{
+  "name": "ncsnpp",
+  "image_size": 256,
+  "channels": 1,
+  "nf": 128,
+  "ch_mult": [
+    1,
+    2,
+    2,
+    2
+  ],
+  "num_res_blocks": 4,
+  "sigma_min": 0.01,
+  "sigma_max": 378,
+  "parameter_tensor_count": 521,
+  "trainable_parameter_tensor_count": 520,
+  "parameter_scalar_count": 61433601,
+  "frozen_parameters": [
+    "all_modules.0.W"
+  ]
+}
